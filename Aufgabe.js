@@ -1,8 +1,15 @@
-function calculate(callbackfunction){
+function calculate(resolve, reject){
     let result = 0;
-    for(let i = 0; i < 900000000; i++){
-        result += i;
+    try{
+        for(let i = 0; i < 900000000; i++){
+            result += i;
+        }
+        resolve(result)
     }
-    callbackfunction(result)
+    catch(error){
+        reject(error)
+    }
+    
 }
-calculate(result => console.log(result))
+const promise = new Promise(calculate)
+promise.then(result => console.log(result), error => console.error(error))
