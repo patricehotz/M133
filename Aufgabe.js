@@ -5,4 +5,4 @@ function calculate(callbackfunction){
     }
     callbackfunction(result)
 }
-calculate((result) => console.log(result))
+calculate(result => console.log(result))
