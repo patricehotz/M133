@@ -1,7 +1,8 @@
-function Summ(number1, number2, callbackFunction){
-    callbackFunction(number1);
-    callbackFunction(number2);
-    callbackFunction(number1+ number2);
+function calculate(callbackfunction){
+    let result = 0;
+    for(let i = 0; i < 900000000; i++){
+        result += i;
+    }
+    callbackfunction(result)
 }
-
-Summ(1 , 2 , number => console.log(number))
+calculate((result) => console.log(result))
